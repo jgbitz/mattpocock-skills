@@ -1,24 +1,24 @@
 # Plan: Pocock Skills Adoption + multibilling-infra GLOSSARY Seed
 
 **Date:** 2026-05-26
-**Status:** In progress — Phase 2 complete (2026-05-27)
+**Status:** In progress — Phases 2, 3, 6, 7 complete (2026-05-27)
 **Authors:** Jamie Gaines, Claude (Opus 4.7)
 
 ---
 
 ## Progress snapshot
 
-| Phase                                                                                  | Status                    | Notes                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Triage `infra:follow-up` epic                                                       | Pending                   | Parallel-eligible; pick up in a backlog session.                                                                                                                            |
-| 2. Seed GLOSSARY + DECISION-REGISTER                                                   | **Complete (2026-05-27)** | Shipped as `multibilling-infra@f09c8e907`. 48 entries, 26 `_Avoid_` mappings, plus the Platform v2 software hierarchy from `multibilling-platform/docs/domain-model-v2.md`. |
-| 3. Import `grill-with-docs`                                                            | Next up                   | Unblocked. Run in a fresh session for clean tool budget.                                                                                                                    |
-| 4. First real use of `grill-with-docs`                                                 | Pending                   | Triggers naturally on the next muni-infra plan.                                                                                                                             |
-| 5. Build `just sync-upstream` recipe                                                   | Pending                   | Gated on Phase 3.                                                                                                                                                           |
-| 6. Batch-import no-edit shared skills (caveman, zoom-out, prototype)                   | Pending                   | Gated on Phase 5.                                                                                                                                                           |
-| 7. Batch-import glossary-reading skills (diagnose, tdd, improve-codebase-architecture) | Pending                   | Gated on Phase 6.                                                                                                                                                           |
-| 8. Personal-side skills                                                                | Pending                   | Parallel-eligible from Phase 7 onward.                                                                                                                                      |
-| 9. AGENT_SYS-539 cleanup                                                               | Blocked                   | External dependency: ticket must merge and deploy.                                                                                                                          |
+| Phase                                                                                  | Status                    | Notes                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Triage `infra:follow-up` epic                                                       | Pending                   | Parallel-eligible; pick up in a backlog session.                                                                                                                             |
+| 2. Seed GLOSSARY + DECISION-REGISTER                                                   | **Complete (2026-05-27)** | Shipped as `multibilling-infra@f09c8e907`. 48 entries, 26 `_Avoid_` mappings, plus the Platform v2 software hierarchy from `multibilling-platform/docs/domain-model-v2.md`.  |
+| 3. Import `grill-with-docs`                                                            | **Complete (2026-05-27)** | Shipped as `claude-config@875751f`. All three fork-on-import edits applied (glossary detection, decision-record routing, CONTEXT-MAP branch dropped).                        |
+| 4. First real use of `grill-with-docs`                                                 | Pending                   | Deferred to a fresh session (Jamie's call, 2026-05-27). Triggers on the next muni-infra plan.                                                                                |
+| 5. Build `just sync-upstream` recipe                                                   | Pending                   | Unblocked — seven `.upstream` stamps now in place (grill-with-docs + caveman + zoom-out + prototype + tdd + diagnose + improve-codebase-architecture).                       |
+| 6. Batch-import no-edit shared skills (caveman, zoom-out, prototype)                   | **Complete (2026-05-27)** | Shipped as `claude-config@99173ec` (bundled with `tdd`). Per-skill `.markdownlint.json: {"default": false}` follows the `using-argo-workflows/references/` precedent.        |
+| 7. Batch-import glossary-reading skills (diagnose, tdd, improve-codebase-architecture) | **Complete (2026-05-27)** | `tdd` shipped clean in `claude-config@99173ec`; `diagnose` forked in `@07fe3eb`; `improve-codebase-architecture` forked in `@7b896dd`. Same fork-on-import edit shape as #3. |
+| 8. Personal-side skills                                                                | Pending                   | Parallel-eligible from Phase 7 onward.                                                                                                                                       |
+| 9. AGENT_SYS-539 cleanup                                                               | Blocked                   | External dependency: ticket must merge and deploy.                                                                                                                           |
 
 ---
 
