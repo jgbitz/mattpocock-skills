@@ -1,8 +1,24 @@
 # Plan: Pocock Skills Adoption + multibilling-infra GLOSSARY Seed
 
 **Date:** 2026-05-26
-**Status:** Active
+**Status:** In progress — Phase 2 complete (2026-05-27)
 **Authors:** Jamie Gaines, Claude (Opus 4.7)
+
+---
+
+## Progress snapshot
+
+| Phase                                                                                  | Status                    | Notes                                                                                                                                                                       |
+| -------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Triage `infra:follow-up` epic                                                       | Pending                   | Parallel-eligible; pick up in a backlog session.                                                                                                                            |
+| 2. Seed GLOSSARY + DECISION-REGISTER                                                   | **Complete (2026-05-27)** | Shipped as `multibilling-infra@f09c8e907`. 48 entries, 26 `_Avoid_` mappings, plus the Platform v2 software hierarchy from `multibilling-platform/docs/domain-model-v2.md`. |
+| 3. Import `grill-with-docs`                                                            | Next up                   | Unblocked. Run in a fresh session for clean tool budget.                                                                                                                    |
+| 4. First real use of `grill-with-docs`                                                 | Pending                   | Triggers naturally on the next muni-infra plan.                                                                                                                             |
+| 5. Build `just sync-upstream` recipe                                                   | Pending                   | Gated on Phase 3.                                                                                                                                                           |
+| 6. Batch-import no-edit shared skills (caveman, zoom-out, prototype)                   | Pending                   | Gated on Phase 5.                                                                                                                                                           |
+| 7. Batch-import glossary-reading skills (diagnose, tdd, improve-codebase-architecture) | Pending                   | Gated on Phase 6.                                                                                                                                                           |
+| 8. Personal-side skills                                                                | Pending                   | Parallel-eligible from Phase 7 onward.                                                                                                                                      |
+| 9. AGENT_SYS-539 cleanup                                                               | Blocked                   | External dependency: ticket must merge and deploy.                                                                                                                          |
 
 ---
 
@@ -112,11 +128,11 @@ agent session against muni-infra has a canonical vocabulary to read.
 
 **Acceptance criteria:**
 
-- [ ] `GLOSSARY.md` exists with at least 25 entries, each citing the standard/registry file it came from
-- [ ] `DECISION-REGISTER.md` exists with the scaffold ready for first append
-- [ ] Both follow the `multibilling-docs` framework template (metadata block, no separate ADR concept)
-- [ ] At least 5 of the 25 entries have `_Avoid_` mappings (the place where confused vocabulary already exists)
-- [ ] Committed and pushed to `multibilling-infra` main
+- [x] `GLOSSARY.md` exists with at least 25 entries, each citing the standard/registry file it came from — **48 entries delivered**
+- [x] `DECISION-REGISTER.md` exists with the scaffold ready for first append
+- [x] Both follow the `multibilling-docs` framework template (metadata block, no separate ADR concept)
+- [x] At least 5 of the 25 entries have `_Avoid_` mappings (the place where confused vocabulary already exists) — **26 `_Avoid_` mappings delivered**
+- [x] Committed and pushed to `multibilling-infra` main — `multibilling-infra@f09c8e907`
 
 **Dependencies:** None. Highest-priority single action in this plan.
 
