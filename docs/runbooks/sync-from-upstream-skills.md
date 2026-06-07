@@ -81,8 +81,11 @@ The status column means:
 
 ### `grill-with-docs` — Adopted (forked)
 
-**Status:** Adopted 2026-05-27 as `claude-config@875751f`. Pinned to upstream
-`mattpocock/skills@e7df78b`.
+**Status:** Adopted 2026-05-27 as `claude-config@875751f`. Synced to upstream
+`mattpocock/skills@e3b90b5` on 2026-05-28: ported the upstream Rules-section
+pruning into our forked `CONTEXT-FORMAT.md` (removed "Flag conflicts
+explicitly" and "Show relationships"; reworded "Be opinionated" to point at
+the `_Avoid_` label). All three original fork-on-import edits preserved.
 
 > Stress-tests a draft plan against the existing domain model, sharpens terminology, captures decisions inline.
 
