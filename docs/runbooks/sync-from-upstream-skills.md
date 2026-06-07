@@ -79,7 +79,10 @@ The status column means:
 - **Skipped** — evaluated and rejected for reasons listed
 - **Open** — still under discussion
 
-### `grill-with-docs` — Pending (forked)
+### `grill-with-docs` — Adopted (forked)
+
+**Status:** Adopted 2026-05-27 as `claude-config@875751f`. Pinned to upstream
+`mattpocock/skills@e7df78b`.
 
 > Stress-tests a draft plan against the existing domain model, sharpens terminology, captures decisions inline.
 
@@ -135,22 +138,75 @@ tracking, structured Current Focus, `.claude/handoffs/` convention).
 **Reason for skip:** Superseded by `claude-config/skills/shared/naming-skills/`
 plus the `superpowers:writing-skills` plugin.
 
-### `caveman`, `zoom-out`, `prototype`, `tdd` — Pending (clean adopt)
+### `caveman` — Adopted (forked)
+
+> Ultra-compressed communication mode.
 
 **Target bucket:** `claude-config/skills/shared/`
 
-**Fork-on-import edits:** None expected for `caveman` and `zoom-out`.
-`prototype` and `tdd` reference `CONTEXT.md` for vocabulary, but degrade
-gracefully when absent — leave as-is.
+**Status:** Adopted 2026-05-27 as `claude-config@99173ec`. Forked 2026-05-27 to
+add a
+durable-artifact carve-out (see fork edits below). Pinned to upstream
+`mattpocock/skills@62f43a1`.
 
-### `diagnose`, `improve-codebase-architecture` — Pending (forked)
+**Fork-on-import edits:**
+
+1. **Auto-Clarity Exception expanded** — add a second paragraph that drops caveman style
+   when authoring durable artifacts: tickets via `ticket-cli` (commit messages,
+   PR bodies,
+   ticket Context / Tasks / Constraints / Acceptance Criteria sections), plan
+   files under
+   `docs/plans/`, standards and runbooks under `docs/standards/` or
+   `docs/runbooks/`, ADR
+   or DECISION-REGISTER entries, and any other markdown intended for teammates
+   or future
+   agents. Resume caveman for chat responses about the artifact.
+
+**Why:** Jamie wants caveman as the default chat style, but durable artifacts
+get re-read,
+searched, and reviewed — terse fragments hurt comprehension and tag-based
+search. Upstream's
+Auto-Clarity Exception covers in-chat clarity (warnings, multi-step sequences)
+but not
+written-to-disk artifacts. The carve-out makes the boundary explicit so caveman
+doesn't
+leak into ticket bodies or plan files.
+
+**Upstream-drift handling:** If a future `just sync-upstream` flags this skill,
+re-read the
+upstream diff. If upstream restructures the Auto-Clarity Exception, port the
+carve-out into
+the new structure. If upstream adds its own durable-artifact carve-out, merge or
+replace as
+appropriate and note the choice here.
+
+### `zoom-out`, `prototype`, `tdd` — Adopted (clean)
 
 **Target bucket:** `claude-config/skills/shared/`
+
+**Status:** Adopted 2026-05-27 as `claude-config@99173ec`, byte-identical to
+upstream. Each
+pinned to its own last-touched upstream commit (see `.upstream` stamps in the
+deployed
+skill directories).
+
+**Fork-on-import edits:** None. `prototype` and `tdd` reference `CONTEXT.md` for
+vocabulary, but degrade gracefully when absent — left as-is.
+
+### `diagnose`, `improve-codebase-architecture` — Adopted (forked)
+
+**Target bucket:** `claude-config/skills/shared/`
+
+**Status:** Adopted 2026-05-27. `diagnose` shipped as `claude-config@07fe3eb`
+(pinned to upstream `mattpocock/skills@7afa86d`);
+`improve-codebase-architecture`
+shipped as `claude-config@7b896dd` (pinned to upstream
+`mattpocock/skills@a36584e`).
 
 **Fork-on-import edits:**
 
 1. Same glossary-file detection logic as `grill-with-docs` — read `docs/standards/GLOSSARY.md` in muni repos, `CONTEXT.md` elsewhere.
-2. `improve-codebase-architecture` may offer to create ADRs when a refactor candidate is rejected with a load-bearing reason. Apply the same redirect-to-standards + register-append logic as `grill-with-docs`. Never create `docs/adr/` in a muni repo.
+2. `improve-codebase-architecture` also routes decision recording: in muni repos, prompt for (a) land in an existing standard's Decision section / (b) become a new standard / (c) skip, and on (a)/(b) append a one-row entry to `docs/standards/DECISION-REGISTER.md`. Never create `docs/adr/` in a muni repo. Non-muni fallback keeps upstream ADR behavior.
 
 ### `setup-matt-pocock-skills` — Pending (forked, personal-only)
 
